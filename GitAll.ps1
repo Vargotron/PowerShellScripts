@@ -21,7 +21,8 @@ ForEach {
     # Enter the repo directory
     cd $_
     # Issue command
-    git $Command
+    $gitCommand = "git $Command"
+    Invoke-Expression $gitCommand
 }
 # Go back to the starting pwd
 cd $currentPwd
