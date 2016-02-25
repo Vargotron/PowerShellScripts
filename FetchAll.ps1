@@ -1,3 +1,10 @@
+<#
+    FetchAll.ps1
+    ------------
+
+    Discovers all git repositories at or below the current directory and issues a fetch
+    command to each.
+#>
 # Save our pwd
 $currentPwd = pwd
 Write-Host "Discovering git repositories..." -ForegroundColor "Green"

@@ -1,3 +1,10 @@
+<#
+    GitAll.ps1
+    ----------
+
+    Discovers all git repositories at or below the current directory and issues the specified
+    git command to each. If no command is specified, a status command will be issued.
+#>
 [CmdletBinding()]
 Param (
     [Parameter(Mandatory=$False)]

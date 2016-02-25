@@ -1,3 +1,12 @@
+<#
+    PullAll.ps1
+    -----------
+
+    Discovers all git repositories at or below the current directory and issues fetch & pull
+    commands to each. Specifying a TargetBranch will cause the script to checkout that branch
+    before pulling. If a different branch was checked out, it will be checked out again after
+    pulling the specified target branch.
+#>
 [CmdletBinding()]
 Param (
     [Parameter(Mandatory=$False)]
