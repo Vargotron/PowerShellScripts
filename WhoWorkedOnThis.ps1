@@ -2,9 +2,9 @@
     WhoWorkedOnThis.ps1
     -------------------
 
-    Scans the current git repository (recursively to a depth of 2 or the value given for the -Depth parameter) and
-    returns a list of all commit author email addresses, excluding merge commits. Use -DomainFilter to only return
-    author email addresses from a particular domain (include the @).
+    Scans the current repository (svn or git) recursively to a depth of 2 (or the value given for the -Depth parameter) and
+    returns a list of commit authors, excluding merge commits. The script can be run anywhere in a repository and it will
+    only pull from commits to that location or below.
 #>
 [CmdletBinding()]
 Param (
