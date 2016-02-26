@@ -64,13 +64,13 @@ If ($Git) {
 }
 
 If ($Svn) {
-    RoboCopy . . /L /S /NJH /NJS /XA:H /XD .svn packages logs /Lev:$Depth |% {
+    RoboCopy . . /L /S /NJH /NJS /XA:H /XD .svn /Lev:$Depth |% {
         If ($_ -Match "^\W+\d+\W+(\w:\\(.+\\)+)") {
             $matches[1]
         }
     } |
     ForEach {
-        svn log --non-interactive -q -l 20 $_
+        svn log --non-interactive -q -l 20 $_ 2>$null
     } |% {
         If ($_ -Match "^r\d+\W+\|\W+(.*)\W+\|.*$") {
             $matches[1]
